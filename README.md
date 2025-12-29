@@ -17,26 +17,22 @@ A collection of scripts to inventory and analyze OS disks in Azure environments,
 - `jq` (for JSON parsing)
 - Active Azure subscription with appropriate permissions
 
-## Scripts
-
-### 1. `azure-disk-inventory.sh`
-
-**Main inventory script** - Provides complete OS disk inventory with detailed breakdown and CSV export.
-
-#### Usage
+## Usage
 
 ```bash
 ./azure-disk-inventory.sh
 ```
 
-#### Output
+## Output
 
-- **Console**: Formatted tables showing:
-  - VMSS with Managed (Non-Ephemeral) OS Disks
-  - VMSS with Ephemeral OS Disks
-  - Standalone VM OS Disks (Non-VMSS)
-  
-- **CSV File**: Timestamped CSV file (`azure_os_disks_inventory_YYYYMMDD_HHMMSS.csv`) containing all disk data
+### Console
+Formatted tables showing:
+- VMSS with Managed (Non-Ephemeral) OS Disks
+- VMSS with Ephemeral OS Disks
+- Standalone VM OS Disks (Non-VMSS)
+
+### CSV File
+Timestamped CSV file (`azure_os_disks_inventory_YYYYMMDD_HHMMSS.csv`) containing all disk data.
 
 #### CSV Columns
 
@@ -51,16 +47,6 @@ A collection of scripts to inventory and analyze OS disks in Azure environments,
 - Total Capacity (GB)
 - Ephemeral (Yes/No)
 - Location
-
-### 2. `azure-os-disks-query.sh`
-
-**Simple query script** - Quick lookup of OS disks using Azure Resource Graph.
-
-#### Usage
-
-```bash
-./azure-os-disks-query.sh
-```
 
 ## Why Separate Queries for VMSS?
 
